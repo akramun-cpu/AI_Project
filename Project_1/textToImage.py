@@ -7,7 +7,7 @@ image_counter = 0
 
 def textToImageFnc(prompt_data):
     global image_counter
-    bedrock = boto3.client(service_name = "bedrock-runtime", region_name="us-west-2" )
+    bedrock = boto3.client(service_name = "bedrock-runtime", region_name="eu-central-1" )
 
     payload = {
         "prompt": prompt_data,
