@@ -6,23 +6,21 @@ image_counter = 0
 
 def textToImageFnc(prompt_data):
     global image_counter
-    bedrock = boto3.client(service_name = "bedrock-runtime")
+    bedrock = boto3.client(service_name = "bedrock-runtime", region_name="ap-south-1" )
 
     payload = {
-        "text_prompts": [
-            {
-                "text":prompt_data,
-            }
-        ],
+        "prompt': 'A car made out of vegetables.",
+        "mode": "text-to-image",
+        "output_format": "png",
+        "cfg_scale": 7.5,       
         "seed":80,
-        "steps":40,
     }
 
     body=json.dumps(payload)
 
     accept="application/json"
     content_type="application/json"
-    model_id='stability.stable-diffusion-xl-v1'
+    model_id='stability.sd3-large-v1:0'
 
     response = bedrock.invoke_model(
         body=body,
