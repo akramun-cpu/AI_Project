@@ -15,7 +15,7 @@ def textToTextFnc(prompt_data):
 
     response = bedrock.invoke_model(
         body=body,
-        modelId='arn:aws:bedrock:eu-central-1:009890043166:inference-profile/eu.anthropic.claude-3-sonnet-20240229-v1:0',
+        modelId='arn:aws:bedrock:eu-central-1:009890043166:inference-profile/eu.anthropic.claude-3-5-sonnet-20240620-v1:0',
         accept='application/json',
         contentType='application/json',
     )
