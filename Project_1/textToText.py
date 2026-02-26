@@ -5,10 +5,10 @@ def textToTextFnc(prompt_data):
     bedrock = boto3.client(service_name = "bedrock-runtime" , region_name="ap-south-1" )
 
     payload = {
-        "prompt":f"\n\nHuman:{prompt_data}\n\nAssistant:",
-        "max_tokens_to_sample":512,
-        "temperature":0.8,
-        "top_p":0.8,
+        "anthropic_version": "bedrock-2023-05-31",
+         "max_tokens": 200,
+        "temperature": 0.7,
+        "messages": [{"role": "user", "content": [{"type": "text", "text": "Write a haiku about monsoon rain in Mumbai."}]}],
     }
 
     body = json.dumps(payload)
