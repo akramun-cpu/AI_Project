@@ -20,7 +20,7 @@ def textToImageFnc(prompt_data):
 
     accept="application/json"
     content_type="application/json"
-    model_id='stability.sd3-5-large-v1:0'
+    model_id='stabilityai-stable-diffusion-3-5-large'
 
     response = bedrock.invoke_model(
         body=body,
