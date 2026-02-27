@@ -2,7 +2,7 @@ import boto3
 import json 
 
 def textToTextFnc(prompt_data):
-    bedrock = boto3.client(service_name = "bedrock-runtime" , region_name="ap-south-1" )
+    bedrock = boto3.client(service_name = "bedrock-runtime" , region_name="eu-central-1" )
 
     payload = {
         "anthropic_version": "bedrock-2023-05-31",
