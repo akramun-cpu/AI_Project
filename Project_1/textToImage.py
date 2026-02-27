@@ -7,7 +7,7 @@ image_counter = 0
 
 def textToImageFnc(prompt_data):
     global image_counter
-    bedrock = boto3.client(service_name = "bedrock-runtime", region_name="eu-central-1" )
+    bedrock = boto3.client(service_name = "bedrock-runtime", region_name="us-west-2" )
 
     payload = {
         "prompt": prompt_data,
@@ -20,7 +20,7 @@ def textToImageFnc(prompt_data):
 
     accept="application/json"
     content_type="application/json"
-    model_id='arn:aws:sagemaker:eu-central-1:aws:hub-content/SageMakerPublicHub/Model/stabilityai-stable-diffusion-3-5-large/4.0.4'
+    model_id='stability.sd3-5-large-v1:0'
 
     response = bedrock.invoke_model(
         body=body,
