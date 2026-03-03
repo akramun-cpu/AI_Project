@@ -6,7 +6,7 @@ def textToTextFnc(prompt_data):
 
     payload = {
         "anthropic_version": "bedrock-2023-05-31",
-         "max_tokens": 200,
+         "max_tokens": 500,
         "temperature": 0.7,
         "messages": [{"role": "user", "content": [{"type": "text", "text": prompt_data}]}],
     }
